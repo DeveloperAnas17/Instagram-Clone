@@ -48,11 +48,11 @@ function Post({ id, username, userImg, caption, img }) {
       <form className="flex items-center p-4">
         <EmojiHappyIcon className="h-8" />
         <input
-          className="border-none flex-1 outline-none"
+          className="border-none flex-1 outline-none focus:ring-0"
           type="text"
           placeholder="Add a Comment..."
         />
-        <button className="ml-2 text-blue-400 font-bold">Post</button>
+        <button className="ml-2 text-blue-400 font-semibold">Post</button>
       </form>
     </div>
   );

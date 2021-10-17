@@ -12,7 +12,6 @@ function Stories() {
 
     setSuggestion(suggestion);
   }, []);
-  console.log(suggestion);
 
   return (
     <div className="flex items-center space-x-2 p-6 bg-white mt-8 border-gray-200 border rounded-sm overflow-x-scroll scrollbar-thin scrollbar-thumb-black">
