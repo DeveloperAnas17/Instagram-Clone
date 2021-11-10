@@ -1,5 +1,4 @@
 function Suggestion({ avatar, username }) {
-  console.log(username);
   return (
     <div className="flex items-center justify-between mt-3">
       <div className="flex items-center flex-1">
