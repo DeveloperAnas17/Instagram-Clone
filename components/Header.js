@@ -8,24 +8,13 @@ import {
   MenuIcon,
 } from "@heroicons/react/outline";
 import { HomeIcon } from "@heroicons/react/solid";
-import { useSession } from "next-auth/react";
-import { useRouter } from "next/dist/client/router";
-import { useRecoilState } from "recoil";
-import { modalState } from "../atoms/modalAtom";
 
 function Header() {
-  const { data: session } = useSession();
-  const router = useRouter();
-  const [open, setOpen] = useRecoilState(modalState);
-
   return (
-    <div className="shadow-sm border-b bg-white top-0 z-50 sticky">
+    <header className="shadow-sm border-b bg-white top-0 z-50 sticky">
       <div className="flex justify-between items-center bg-white  max-w-6xl mx-5 xl:mx-auto">
         {/* Left */}
-        <div
-          onClick={() => router.push("/")}
-          className=" relative hidden lg:inline-grid h-14 w-24 cursor-pointer"
-        >
+        <div className=" relative hidden lg:inline-grid h-14 w-24 cursor-pointer">
           <Image
             src="https://links.papareact.com/ocw"
             layout="fill"
@@ -33,10 +22,7 @@ function Header() {
           />
         </div>
 
-        <div
-          onClick={() => router.push("/")}
-          className="relative w-10 h-10 lg:hidden flex-shrink-0 cursor-pointer"
-        >
+        <div className="relative w-10 h-10 lg:hidden flex-shrink-0 cursor-pointer">
           <Image
             src="https://links.papareact.com/jjm"
             layout="fill"
@@ -68,19 +54,12 @@ function Header() {
               3
             </div>
           </div>
-          <PlusCircleIcon onClick={() => setOpen(true)} className="navBtn" />
+          <PlusCircleIcon className="navBtn" />
           <UserGroupIcon className="navBtn" />
           <HeartIcon className="navBtn" />
-
-          <img
-            className="h-10 w-10 rounded-full cursor-pointer"
-            // src={session.user?.image}
-            src="https://cdn.fakercloud.com/avatars/carlosgavina_128.jpg"
-            alt="Profile Pic"
-          />
         </div>
       </div>
-    </div>
+    </header>
   );
 }
 
